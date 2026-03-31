@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SnapBackground
 
-## Getting Started
+🖼️ 简单、快速、免费，无需下载安装即可移除图片背景
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-15-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-Pages-orange)
+
+## 功能特性
+
+- 📷 拖拽或点击上传图片
+- 👀 实时预览原图
+- 🎯 一键移除背景
+- ⬇️ 下载透明背景 PNG
+- 📱 响应式设计，支持移动端
+
+## 技术栈
+
+- **前端**: Next.js 15 (App Router)
+- **部署**: Cloudflare Pages
+- **AI API**: [Remove.bg](https://www.remove.bg/api)
+
+## 快速开始
+
+### 1. 克隆项目
+
+```bash
+git clone https://github.com/JiaLLL1/image-background-remover.git
+cd image-background-remover
+```
+
+### 2. 安装依赖
+
+```bash
+npm install
+```
+
+### 3. 配置环境变量
+
+从 [Remove.bg API](https://www.remove.bg/api) 获取 API Key，然后创建 `.env.local` 文件：
+
+```bash
+REMOVE_BG_API_KEY=your_api_key_here
+```
+
+### 4. 本地开发
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+访问 http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 5. 部署到 Cloudflare Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run pages:deploy
+```
 
-## Learn More
+## 限制
 
-To learn more about Next.js, take a look at the following resources:
+| 项目 | 限制 |
+|------|------|
+| 单文件大小 | 12MB |
+| API 免费额度 | 50次/小时 |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 项目结构
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/app/
+├── api/
+│   └── remove-background/
+│       └── route.ts    # Remove.bg API 代理
+├── globals.css         # 全局样式
+├── layout.tsx          # 根布局
+└── page.tsx            # 主页面
+```
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
