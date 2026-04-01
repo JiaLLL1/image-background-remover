@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
+import { onPagesFullyGenerated } from "@cloudflare/next-on-pages/next-dev";
 
 const nextConfig: NextConfig = {
   // Cloudflare Pages configuration
-  // The @cloudflare/next-on-pages package handles most settings automatically
 };
 
 export default nextConfig;
